@@ -1,0 +1,21 @@
+boxer_task:
+  description: "Find information about a boxer specified by the user. The user will provide the boxer's name: {boxer_name}"
+  expected_output: "A summary of the boxer's information:
+                    - Full Name
+                    - Nickname
+                    - current weight class
+                    - belts held (if any)
+                    - professional record (wins, losses, draws)
+                    - notable fights (2 if any)
+                    - Rank
+                    - Next Fight (Scheduled) (if any)
+                    - date of next fight (if any)
+                    - location of next fight (if any)
+                    - Note about the boxer's fighting style (if any)
+                    "
+  agent: boxer_agent
+
+reporter_task:
+  description: "Look into the given website 'https://ringmagazine.com/en' for the latest news, create a news report, and send it to the user's WhatsApp number. The user will provide their phone number '{phone_number}' and country code '{country_code}'."
+  expected_output: "A confirmation that the report has been sent."
+  agent: reporter_agent
