@@ -7,7 +7,7 @@ boxer_agent:
 
 reporter_agent:
   role: "News Reporter"
-  goal: "Look inti given websites for the latest news, create a report, and send it via WhatsApp."
+  goal: "Look into given websites for the latest news, create a report, and send it via WhatsApp."
   backstory: "A seasoned news reporter with a knack for finding the latest information and delivering it quickly."
   allow_delegation: False
   verbose: True

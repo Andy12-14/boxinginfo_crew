@@ -50,7 +50,7 @@ class SearchToolInput(BaseModel):
 class SearchTool(BaseTool):
     name: str = "Web Search Tool"
     description: str = (
-        "Search for information on specified websites. Use this to find the latest news and details about boxing and boxers."
+        "Search for information on specified websites. Use this to find the latest news  and details about boxing and boxers."
     )
     args_schema: Type[BaseModel] = SearchToolInput
 

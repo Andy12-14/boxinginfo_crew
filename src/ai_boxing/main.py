@@ -29,7 +29,8 @@ def run():
         "country_code": country_code,
         "phone_number": phone_number,
         'topic': 'boxing',
-        'current_year': str(datetime.now().year)
+        'current_year': str(datetime.now().year),
+        'current_month': str(datetime.now().month)
         # Add other variables as needed
     }
     try:
