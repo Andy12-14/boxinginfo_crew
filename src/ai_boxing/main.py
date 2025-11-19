@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import sys
+import os
 import warnings
+
+os.environ['CREWAI_DISABLE_TELEMETRY'] = 'true'
 
 from datetime import datetime
 
@@ -33,6 +36,11 @@ def run():
         'current_month': str(datetime.now().month)
         # Add other variables as needed
     }
+    # Export key inputs to environment so tools can prefer main.py supplied values
+    import os
+    os.environ["BOXER_NAME"] = boxer_name
+    os.environ["COUNTRY_CODE"] = country_code
+    os.environ["PHONE_NUMBER"] = phone_number
     try:
         AiBoxing().crew().kickoff(inputs=inputs)
     except Exception as e:

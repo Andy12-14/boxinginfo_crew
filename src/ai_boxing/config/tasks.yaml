@@ -1,21 +1,26 @@
 boxer_task:
   description: "Find information about a boxer specified by the user. The user will provide the boxer's name: {boxer_name}"
-  expected_output: "A summary of the boxer's information:
-                    - Full Name
-                    - Nickname
-                    - current weight class
-                    - belts held (if any)
-                    - professional record (wins, losses, draws)
-                    - notable fights (2 if any)
-                    - Rank
-                    - Next Fight (Scheduled) (if any) for the {current_month}/{current_year}
-                    - date of next fight (if any)
-                    - location of next fight (if any)
-                    - Note about the boxer's fighting style (if any)
-                    "
+  expected_output: "A concise summary of the boxer's information in two sections: 'Boxer Infos' and 'Boxing Highlights'."
   agent: boxer_agent
 
 reporter_task:
-  description: "Look into the given website 'https://ringmagazine.com/en' for the latest news, create a news report, and send it to the user's WhatsApp number. The user will provide their phone number '{phone_number}' and country code '{country_code}'."
-  expected_output: "A confirmation that the report has been sent."
+  description: >
+    You have access to two pieces of information: JSON data about a specific boxer from the previous task, and the ability to search for recent news.
+    Your task is to create a comprehensive report.
+    1. First, use the 'Web Search Tool2' to get the latest news from 'https://www.espn.com/boxing/'.
+    2. Then, use the 'Summarizer Tool'. This tool requires two arguments: 'boxer_json_data' and 'news_json_data'.
+       - For 'boxer_json_data', you must use the JSON data provided from the previous task's output.
+       - For 'news_json_data', you must use the output from your 'Web Search Tool2' call.
+    3. The 'Summarizer Tool' will return a full report.
+    4. Finally, take this report and send it to the user's WhatsApp number using the 'WhatsApp Message Tool'.
+    The user will provide their phone number '{phone_number}' and country code '{country_code}'.
+  expected_output: >
+    A concise summary of the latest boxing news and events, formatted as a news report suitable for WhatsApp delivery.
+    The report should include:
+    - A catchy headline
+    - The summarized information about the boxer.
+    - A brief summary of the top stories from ESPN.
+    - Key highlights and statistics.
+    - Any upcoming boxing events or matches.
+    Ensure the report is engaging and informative, tailored for a general audience interested in boxing.
   agent: reporter_agent

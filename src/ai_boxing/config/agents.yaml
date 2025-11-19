@@ -11,3 +11,4 @@ reporter_agent:
   backstory: "A seasoned news reporter with a knack for finding the latest information and delivering it quickly."
   allow_delegation: False
   verbose: True
+

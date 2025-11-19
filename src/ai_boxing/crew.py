@@ -3,7 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 from crewai import LLM
-from ai_boxing.tools.custom_tool import WhatsAppTool, SearchTool
+from ai_boxing.tools.custom_tool import WhatsAppTool, SearchTool1, SearchTool2, BoxerScrapeTool, SummarizeTool
 
 
 llm = LLM(
@@ -14,8 +14,8 @@ llm = LLM(
         # shorter timeouts while developing so failures surface quickly
         "timeout": 30,  # 30 seconds overall
         "request_timeout": 30,  # 30 seconds per HTTP request
-        "context_window": 2048,
-        "temperature": 0.7,
+        "context_window": 2048,# smaller context window for faster performance
+        "temperature": 0.7,# more creative responses
         # stream helps get partial output sooner
         "stream": True,
         # keep responses short while testing
@@ -38,7 +38,7 @@ class AiBoxing():
             config=self.agents_config['boxer_agent'], # type: ignore[index]
             verbose=True,
             llm=llm,
-            tools=[SearchTool()]
+            tools=[BoxerScrapeTool()]
         )
 
     @agent
@@ -47,7 +47,7 @@ class AiBoxing():
             config=self.agents_config['reporter_agent'], # type: ignore[index]
             verbose=True,
             llm=llm,
-            tools=[SearchTool(), WhatsAppTool()]
+            tools=[SearchTool2(),  SummarizeTool(),WhatsAppTool()]
         )
 
     @task

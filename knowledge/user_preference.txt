@@ -1,4 +1,39 @@
-User name is John Doe.
-User is an AI Engineer.
-User is interested in AI Agents.
-User is based in San Francisco, California.
+{"boxer_info": {
+    "name": "Terence Crawford",
+    "birth_name": "Terence Allan Crawford",
+    "alias": "Bud",
+    "age": 38,
+    "nationality": "USA",
+    "sex": "male",
+    "stance": "southpaw",
+    "height": "5′ 9″ / 175cm",
+    "reach": "75″ / 191cm",
+    "residence": "Omaha, Nebraska, USA",
+    "birth_place": "Omaha, Nebraska, USA",
+    "club/gym": "B&B Sports Academy",
+    "wiki": "https://boxrec.com/wiki/index.php?title=Human:447121",
+    "record": "29-6-1",
+    "titles": [
+      "IBF World Super Middle",
+      "WBC World Super Middle",
+      "WBO World Super Middle",
+      "WBO World Light"
+    ]},
+
+"career_stats": {
+    "bouts": 42,
+    "rounds": 257,
+    "KOs": 31,
+    "career": "2008-2025",
+    "debut": "2008-03-14",
+    "titles": [
+      "IBF World Super Middle",
+      "WBC World Super Middle",
+      "WBO World Super Middle"
+    ]
+  },
+
+    "rating": {
+    "rating": "#1 / 1,817",
+    "division": "super middle"
+  }}
